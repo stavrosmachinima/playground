@@ -1,0 +1,19 @@
+version: '3'
+services:
+  backend:
+    build: ./backend
+    volumes:
+      - ./backend:/app
+    ports:
+      - 3000:3000
+    environment:
+      - NODE_ENV=development
+
+  client:
+    build: ./client
+    volumes:
+      - ./client:/app
+    ports:
+      - 3001:3001
+    environment:
+      - NODE_ENV=development
